@@ -40,4 +40,20 @@ export class Supabase {
   async DeletVetPacientes(id: number) {
     return await this.supabase.from('tbl_vet-pacientes').delete().eq('id', id);
   }
+
+  // INSERT: Vet | Pacientes
+  async InsertPaciente(nome: string, tipo: string, idade: string, ultima_consulta: string) {
+    return await this.supabase.from('tbl_vet-pacientes').insert({
+      nome: nome, tipo: tipo, idade: idade, ultima_consulta: ultima_consulta
+    });
+  }
+
+  // GET: Far | Medicamentos
+  async GetFarMedicamentos() {
+    return await this.supabase.from('tbl_far-medicamentos').select('*');
+  }
+
+  async GetFarMedicamentosById(id: number) {
+    return await this.supabase.from('tbl_far-medicamentos').select('*').eq('id', id);
+  }
 }

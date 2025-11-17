@@ -1,0 +1,150 @@
+.main {
+    margin-left: 250px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+ion-button > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card {
+    box-shadow: none;
+    border: 1px solid lightgray;
+    margin-top: 20px;
+    border-radius: 12px;
+    ion-card-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.card-acao-btn {
+    background-color: #859F3D;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    color: white;
+}
+
+// Tabela
+.tabela-container {
+  width: 100%;
+  overflow-x: auto;           // Habilita scroll horizontal
+  -webkit-overflow-scrolling: touch; // Scroll suave no iOS
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px 0;
+}
+
+table {
+    font-family: var(--font-family);
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #305669;
+    color: white;
+}
+
+th {
+    padding: 20px;
+}
+
+td {
+    padding: 15px;
+}
+
+.texto-cortado {
+  max-width: 300px; /* Ajuste conforme o espaço disponível */
+  text-align: justify;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    ion-button {
+        font-family: var(--font-family);
+        width: 100%;
+        border-radius: 30px;
+    }
+    ion-button:first-child {
+        background-color: #93BFC7;
+    }
+    ion-button:last-child {
+        background-color: #C66E52;
+    }
+}
+
+ion-searchbar {
+    font-family: var(--font-family);
+    --box-shadow: none;
+    border: 1px solid #ECF4E8;
+    margin-right: 20px;
+    border-radius: 12px;
+    width: 600px;
+}
+
+// Responsividade
+// Responsivo: abaixo de 768px, vira "cartões"
+@media (max-width: 768px) {
+    thead {
+        display: none; // Esconde cabeçalho
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 16px;
+        border: 1px solid var(--ion-color-medium);
+        border-radius: 8px;
+        padding: 12px;
+        background-color: var(--ion-card-background, #fff);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+        display: block;
+        text-align: center;
+        font-size: 13px;
+        position: relative;
+        padding: 8px 0;
+        border-bottom: none;
+
+        &:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            width: 50%;
+            padding-left: 12px;
+            font-weight: bold;
+            color: var(--ion-color-medium);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        &[data-label="Ações"] {
+            text-align: center;
+            margin-top: 12px;
+
+            &:before {
+                display: none;
+            }
+
+            ion-button {
+                margin: 0 4px;
+            }
+        }
+    }
+}
+
+.detalhes-btn {
+    background: #1A1A19;
+    overflow: hidden;
+    color: white;
+    border-radius: 30px;
+}

@@ -1,0 +1,48 @@
+<ion-content>
+  <!-- Sidemenu -->
+  <app-sidemenu></app-sidemenu>
+  <!-- Page Content -->
+  <main class="main">
+    <h1>Módulo: Farmácia | Medicamentos</h1>
+    <ion-card class="card">
+      <ion-card-content>
+        <ion-searchbar placeholder="Pesquise o paciente..."></ion-searchbar>
+      </ion-card-content>
+    </ion-card>
+    <!-- Tabela -->
+    <div class="tabela-container">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Categoria</th>
+            <th>Classe</th>
+            <th>Principio Ativo</th>
+            <th>Bula</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of medicamentos">
+            <td>{{item.nome}}</td>
+            <td>{{item.categoria}}</td>
+            <td>{{item.classe}}</td>
+            <td>{{item.principio_ativo}}</td>
+            <td>
+              <ion-button href="{{item.bula}}">abrir bula</ion-button>
+            </td>
+            <td>
+              <ion-buttons class="acoes">
+                <ion-button>editar</ion-button>
+                <ion-button class="detalhes-btn" (click)="DetalhesModal(item.farmacocinetica, item.farmacodinamica)">detalhes</ion-button>
+                <ion-button>excluir</ion-button>
+              </ion-buttons>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <div>
+  </div>
+</ion-content>

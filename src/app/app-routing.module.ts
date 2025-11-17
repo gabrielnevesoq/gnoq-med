@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'far-medicamentos',
+    loadChildren: () => import('./pages/far-medicamentos/far-medicamentos.module').then( m => m.FarMedicamentosPageModule)
+  },
 ];
 
 @NgModule({

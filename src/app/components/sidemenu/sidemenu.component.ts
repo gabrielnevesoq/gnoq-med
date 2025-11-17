@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Alert } from 'src/app/services/alert';
+import { Bulario } from 'src/app/services/bulario/bulario';
 import { Supabase } from 'src/app/services/supabase/supabase';
 
 @Component({

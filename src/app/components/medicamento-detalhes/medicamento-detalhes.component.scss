@@ -1,0 +1,32 @@
+.card-com-scroll {
+    padding: 20px;
+    /* Altura fixa que você quer */
+    height: 80vh;                  /* 80% da altura da tela */
+    max-height: 250px;             /* ou um valor máximo em pixels */
+    
+    /* Importante: permite scroll só dentro do card */
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    box-shadow: none;
+    border-radius: 12px;
+    border: 1px solid lightgray;
+}
+
+.card-com-scroll ion-card-header {
+    flex: 0 0 auto;                /* cabeçalho não encolhe */
+}
+
+.card-com-scroll ion-card-title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid green;
+}
+
+.card-com-scroll ion-card-content {
+    flex: 1 1 auto;                /* ocupa o espaço restante */
+    overflow-y: auto;              /* habilita scroll vertical */
+    -webkit-overflow-scrolling: touch; /* scroll mais suave no iOS */
+    margin-top: 10px;
+    /* Opcional: padding interno bonito */
+    padding: 16px;
+}
