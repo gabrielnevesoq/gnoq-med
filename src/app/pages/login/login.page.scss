@@ -1,0 +1,30 @@
+.login-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #859F3D;
+}
+
+.login-forms {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 12px;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: var(--font-family);
+    background-color: white;
+}
+
+ion-input {
+    font-family: var(--font-family);
+    font-size: 15px;
+}
+
+ion-button {
+    width: 100%;
+    margin: 0;
+    --box-shadow: none;
+    font-family: var(--font-family);
+}

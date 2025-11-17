@@ -1,0 +1,28 @@
+<aside class="sidemenu">
+  <!-- User Info -->
+  <div class="sidemenu-user" *ngFor="let item of profile">
+    <ion-avatar>
+      <img alt="Silhouette of a person's head" src="{{item.foto}}" />
+    </ion-avatar>
+    <ion-label>{{item.nome}}</ion-label>
+    <ion-button class="logout-btn">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!-- Sidemenu content -->
+  <section class="sidemenu-content">
+    <!-- Módulo: Veterinário -->
+    <div class="module-title">
+      <ion-text>Veterinário</ion-text>
+    </div>
+    <ion-buttons class="module-btns">
+      <ion-button [routerLink]="['/vet-pacientes']" routerLinkActive="router-link-active" >
+        <div>
+          <ion-icon name="person-outline"></ion-icon>
+          <span>Pacientes</span>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </section>
+</aside>

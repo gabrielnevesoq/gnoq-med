@@ -1,0 +1,29 @@
+ion-header {
+    box-shadow: none;
+}
+
+ion-toolbar {
+    font-family: var(--font-family);
+    box-shadow: none;
+    --background: #859F3D;
+}
+
+ion-content {
+    font-family: var(--font-family);
+    ion-input, ion-select {
+        font-size: 15px;
+        font-family: var(--font-family);
+    }
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-modal {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}

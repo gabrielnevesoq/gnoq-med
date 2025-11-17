@@ -1,0 +1,62 @@
+<ion-content>
+  <!-- Sidemenu -->
+  <app-sidemenu></app-sidemenu>
+  <!-- Page content -->
+  <main class="main">
+    <h1>Módulo: Veterinário | Pacientes</h1>
+    <div>
+      <!-- Card: Funcionalidades -->
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-searchbar placeholder="Pesquise o paciente..."></ion-searchbar>
+          <ion-buttons>
+            <ion-button class="card-acao-btn" (click)="OpenModal()">
+              <div>
+                <ion-icon name="add-outline"></ion-icon>
+                <span>novo paciente</span>
+              </div>
+            </ion-button>
+          </ion-buttons>
+        </ion-card-content>
+      </ion-card>
+      <!-- Card: Tabela de pacientes -->
+      <div class="tabela-container">
+        <table class="responsive-table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>Idade</th>
+              <th>Última Consulta</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of pacientes">
+              <td style="display: flex; align-items: center; justify-content: center;">
+                <ion-avatar class="foto-paciente">
+                  <img [src]="item.foto || 'https://ionicframework.com/docs/img/demos/avatar.svg'"/>
+                </ion-avatar>
+              </td>
+              <td>{{item.nome}}</td>
+              <td>{{item.tipo}}</td>
+              <td>{{item.idade}}</td>
+              <td>{{item.ultima_consulta}}</td>
+              <td>
+                <ion-badge [style.background]="badge_color">{{item.status}}</ion-badge>
+              </td>
+              <td>
+                <ion-buttons class="acoes">
+                  <ion-button>editar</ion-button>
+                  <ion-button>excluir</ion-button>
+                </ion-buttons>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</ion-content>

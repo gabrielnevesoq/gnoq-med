@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="header-content">
+      <ion-title>Novo Paciente</ion-title>
+      <ion-buttons>
+        <ion-button (click)="CloseModal()">
+          <span class="close-modal">
+            <ion-icon name="close-outline"></ion-icon>
+            <span>Fechar</span>
+          </span>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div>
+    <ion-input fill="outline" labelPlacement="floating">
+      <div slot="label">
+        <span>Nome </span>
+        <span style="color: red;">(Obrigatório)</span>
+      </div>
+    </ion-input>
+  </div>
+</ion-content>

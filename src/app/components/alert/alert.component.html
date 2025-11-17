@@ -1,0 +1,7 @@
+<div class="alert-toast"  [class.visible]="visible"  [class.success]="type === 'success'" [class.error]="type === 'error'">
+  <ion-icon [name]="getIcon()" class="icon"></ion-icon>
+  <span class="message">{{ message }}</span>
+  <ion-button fill="clear" size="small" (click)="hide()">
+    <ion-icon name="close-outline"></ion-icon>
+  </ion-button>
+</div>
