@@ -41,4 +41,13 @@ ion-content {
 // Modal - Detalhes de medicamento
 .detalhes-medicamentos-modal {
     --border-radius: 12px;
+    ion-card {
+        font-family: var(--font-family);
+    }
+}
+
+// Router
+.router-link-active {
+    background: lightgray;
+    border-radius: 12px;
 }

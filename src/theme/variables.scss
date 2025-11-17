@@ -1,5 +1,11 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@200..700&display=swap');
 :root {
-    --font-family: 'JetBrains Mono';
+    --font-family: 'Stack Sans Text';
+}
+
+ion-button {
+    font-family: 'Stack Sans Text';
 }
