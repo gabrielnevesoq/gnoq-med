@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, input, Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Alert } from 'src/app/services/alert';
@@ -17,6 +17,9 @@ export class MedicamentoDetalhesComponent  implements OnInit {
   ngOnInit() {}
 
   // Get: Medicamentos
+  @Input() nome: string = "";
   @Input() farmacocinetica: string = "";
   @Input() farmacodinamica: string = "";
+  @Input() efeitos: string = "";
+  @Input() interacoes: string = "";
 }

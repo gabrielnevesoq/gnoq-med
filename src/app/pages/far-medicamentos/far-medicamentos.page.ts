@@ -29,13 +29,16 @@ export class FarMedicamentosPage implements OnInit {
   }
 
   // Abrir modal de detalhes
-  async DetalhesModal(farmacocinetica: string, farmacodinamica: string) {
+  async DetalhesModal(nome: string, farmacocinetica: string, farmacodinamica: string, efeitos: string, interacoes: string) {
     const modal = this.modalCtrl.create({
       component: MedicamentoDetalhesComponent,
       cssClass: 'detalhes-medicamentos-modal',
       componentProps: {
+        nome: nome,
         farmacocinetica: farmacocinetica,
-        farmacodinamica: farmacodinamica
+        farmacodinamica: farmacodinamica,
+        efeitos: efeitos,
+        interacoes: interacoes
       }
     });
     (await modal).present();

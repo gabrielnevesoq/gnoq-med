@@ -1,3 +1,12 @@
+ion-header {
+    box-shadow: none;
+    ion-toolbar {
+        font-family: var(--font-family);
+        --background: #31511E;
+        color: white;
+    }
+}
+
 .card-com-scroll {
     padding: 20px;
     /* Altura fixa que você quer */
@@ -26,7 +35,7 @@
     flex: 1 1 auto;                /* ocupa o espaço restante */
     overflow-y: auto;              /* habilita scroll vertical */
     -webkit-overflow-scrolling: touch; /* scroll mais suave no iOS */
-    margin-top: 10px;
+    margin-top: 5px;
     /* Opcional: padding interno bonito */
     padding: 16px;
 }
