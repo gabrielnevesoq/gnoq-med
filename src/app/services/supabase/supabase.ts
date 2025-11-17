@@ -16,6 +16,11 @@ export class Supabase {
     return await this.supabase.auth.signInWithPassword({email: email, password: senha});
   }
 
+  // LOGOUT
+  async LogOut() {
+    return await this.supabase.auth.signOut();
+  }
+
   // GET: Current user
   async CurrentUser() {
     return await this.supabase.auth.getUser();

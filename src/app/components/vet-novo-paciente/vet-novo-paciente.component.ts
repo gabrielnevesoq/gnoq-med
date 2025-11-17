@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
+import { Alert } from 'src/app/services/alert';
 
 @Component({
   selector: 'app-vet-novo-paciente',
@@ -10,7 +11,7 @@ import { IonicModule, ModalController } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class VetNovoPacienteComponent  implements OnInit {
-  constructor(private modalCtrl: ModalController) {}
+  constructor(private modalCtrl: ModalController, private toast: Alert) {}
   ngOnInit() {}
 
   // Close modal

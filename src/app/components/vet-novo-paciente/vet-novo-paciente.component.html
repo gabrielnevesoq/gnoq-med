@@ -15,12 +15,35 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div>
+  <div class="forms">
     <ion-input fill="outline" labelPlacement="floating">
       <div slot="label">
         <span>Nome </span>
         <span style="color: red;">(Obrigatório)</span>
       </div>
     </ion-input>
+    <ion-select fill="outline" labelPlacement="floating">
+      <div slot="label">
+        <span>Tipo </span>
+        <span style="color: red;">(Obrigatório)</span>
+      </div>
+      <ion-select-option>Cachorro</ion-select-option>
+      <ion-select-option>Gato</ion-select-option>
+    </ion-select>
+    <ion-input fill="outline" labelPlacement="floating">
+      <div slot="label">
+        <span>Idade </span>
+        <span style="color: red;">(Obrigatório)</span>
+      </div>
+    </ion-input>
+    <ion-select fill="outline" labelPlacement="floating">
+      <div slot="label">
+        <span>Última consulta </span>
+        <span style="color: red;">(Obrigatório)</span>
+      </div>
+      <ion-select-option>1 a 3 meses</ion-select-option>
+      <ion-select-option>Mais de 1 ano</ion-select-option>
+    </ion-select>
+    <ion-button>cadastrar</ion-button>
   </div>
 </ion-content>

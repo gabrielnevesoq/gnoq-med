@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { VetNovoPacienteComponent } from 'src/app/components/vet-novo-paciente/vet-novo-paciente.component';
+import { Alert } from 'src/app/services/alert';
 import { Supabase } from 'src/app/services/supabase/supabase';
 
 @Component({
@@ -11,7 +12,7 @@ import { Supabase } from 'src/app/services/supabase/supabase';
   providers: [Supabase]
 })
 export class VetPacientesPage implements OnInit {
-  constructor(private supabase: Supabase, private modalCtrl: ModalController) { }
+  constructor(private supabase: Supabase, private modalCtrl: ModalController, private toast: Alert) { }
   ngOnInit() {
     this.GetVetPacientes();
   }
@@ -35,6 +36,17 @@ export class VetPacientesPage implements OnInit {
       console.error(error);
     } else {
       this.pacientes = data;
+    }
+  }
+
+  // Delete: Paciente
+  async DeletePaciente(id: number) {
+    const {error} = await this.supabase.DeletVetPacientes(id);
+    if (error) {
+      this.toast.error('Erro ao excluir paciente. Tente novamente mais tarde.');
+    } else {
+      this.toast.success('Paciente excluído com sucesso.');
+      window.location.reload();
     }
   }
 }

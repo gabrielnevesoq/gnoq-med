@@ -2,10 +2,10 @@
   <!-- User Info -->
   <div class="sidemenu-user" *ngFor="let item of profile">
     <ion-avatar>
-      <img alt="Silhouette of a person's head" src="{{item.foto}}" />
+      <img alt="Silhouette of a person's head" [src]="item.foto || 'https://ionicframework.com/docs/img/demos/avatar.svg'" />
     </ion-avatar>
     <ion-label>{{item.nome}}</ion-label>
-    <ion-button class="logout-btn">
+    <ion-button class="logout-btn" (click)="LogOut()">
       <ion-icon name="log-out-outline"></ion-icon>
     </ion-button>
   </div>

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { Alert } from 'src/app/services/alert';
 import { Supabase } from 'src/app/services/supabase/supabase';
@@ -14,7 +14,7 @@ import { Supabase } from 'src/app/services/supabase/supabase';
   providers: [Supabase]
 })
 export class SidemenuComponent  implements OnInit {
-  constructor(private supabase: Supabase, private toast: Alert) { }
+  constructor(private supabase: Supabase, private toast: Alert, private router: Router) { }
   ngOnInit() {
     this.loadUserData();
   }
@@ -37,12 +37,22 @@ export class SidemenuComponent  implements OnInit {
     const { data: profileData, error: profileError } = await this.supabase.UserProfile(userId);
 
     if (profileError) {
-      console.error(profileError);
+      // console.error(profileError);
       this.toast.error('Erro ao recuperar perfil do usuário.');
     } else {
       this.profile = profileData;
-      this.toast.success('Bem vindo(a)! ')
-      console.log('Perfil carregado:', profileData);
+      // console.log('Perfil carregado:', profileData);
+    }
+  }
+
+  // LOGOUT
+  async LogOut() {
+    const {error} = await this.supabase.LogOut();
+    if (error) {
+      this.toast.error('Ocorreu um erro Tente novamente mais tarde.');
+    } else {
+      this.toast.success('Usuário deslogado.');
+      this.router.navigateByUrl('/login');
     }
   }
 }
